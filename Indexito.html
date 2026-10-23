@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#131313;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#9cf0ff", "tertiary-container": "#4dab00", "on-tertiary-fixed-variant": "#215100", "on-tertiary": "#153800", "on-secondary-fixed-variant": "#004f58", "secondary": "#bdf4ff", "surface-container-lowest": "#0e0e0e", "surface-container-low": "#1c1b1b", "on-primary-fixed-variant": "#7c2e00", "inverse-on-surface": "#313030", "primary-fixed-dim": "#ffb596", "surface-container-highest": "#353534", "error": "#ffb4ab", "secondary-fixed-dim": "#00daf3", "on-secondary": "#00363d", "surface-dim": "#131313", "primary-fixed": "#ffdbcd", "on-tertiary-fixed": "#092100", "error-container": "#93000a", "secondary-container": "#00e3fd", "on-primary-fixed": "#360f00", "tertiary": "#67e100", "background": "#131313", "on-surface-variant": "#e3bfb1", "on-secondary-container": "#00616d", "tertiary-fixed": "#80ff2c", "on-background": "#e5e2e1", "surface-container": "#201f1f", "primary": "#ffb596", "on-secondary-fixed": "#001f24", "on-tertiary-container": "#143700", "on-primary-container": "#561d00", "surface": "#131313", "outline": "#aa8a7d", "on-error-container": "#ffdad6", "inverse-primary": "#a33e00", "on-error": "#690005", "on-surface": "#e5e2e1", "inverse-surface": "#e5e2e1", "surface-variant": "#353534", "outline-variant": "#5a4136", "surface-bright": "#393939", "primary-container": "#ff6600", "on-primary": "#581e00", "tertiary-fixed-dim": "#67e100", "surface-container-high": "#2a2a2a", "surface-tint": "#ffb596" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.75rem", "space-lg": "1.5rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "gutter": "0.75rem", "margin-desktop": "2rem", "margin": "1rem", "space-xs": "0.5rem", "space-2xs": "0.25rem" }, fontFamily: { "body-md": ["Hanken Grotesk"], "headline-lg": ["Space Grotesk"], "cta-button": ["Space Grotesk"], "display-hero": ["Space Grotesk"], "label-badge": ["Hanken Grotesk"], "label-tech": ["JetBrains Mono"], "display-hero-mobile": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-sm": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-sm": ["Space Grotesk"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0", fontWeight: "400" }], "headline-lg": ["28px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }], "cta-button": ["15px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "700" }], "display-hero": ["40px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "700" }], "label-badge": ["11px", { lineHeight: "12px", letterSpacing: "0.06em", fontWeight: "700" }], "label-tech": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "500" }], "display-hero-mobile": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-primary-container shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="JBL Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa_kZxbbgQ-vuBHP6x2C2Fu7x66SH6uQ-yYrBaAMG9FPgFjpy7AlRqpENwAXhrtGpl-vWPAeZZ4WSQWdDm9pSg_F3SK2gWpS02sEprfiiVRsi5KwGfhURGx_CfrWxyUmB_piyQRAVC88yXljKEmgp59plWGV6YrkFakkcxgyjP3VGCup0jlq1cUYBlAhkMfHAZhm5F6jfNiPZ9HLFuv9OUDbI3mAy8k_2SKqvMvM4"/><span class="font-headline-sm text-headline-sm text-white tracking-tight uppercase hidden xs:inline-block">JBL Audio Store</span></div><h1 class="font-headline-sm text-headline-sm text-white truncate max-w-[140px] text-center font-bold">Catálogo</h1><div class="flex items-center gap-space-2xs"><button aria-label="Buscar" class="w-11 h-11 flex items-center justify-center text-white hover:text-white/80 transition-colors"><span class="material-symbols-outlined text-[24px]">search</span></button><button aria-label="Filtros" class="w-11 h-11 flex items-center justify-center text-white hover:text-white/80 transition-colors"><span class="material-symbols-outlined text-[24px]">tune</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Brand Promo Banner -->
+<section class="px-margin pt-space-md pb-space-sm">
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-space-md shadow-md text-white">
+<div class="relative z-10 flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-black/25 text-white font-label-tech text-label-tech uppercase tracking-wider">
+            Audio Pro 2025
+          </span>
+<span class="flex items-center gap-1 font-label-badge text-label-badge uppercase tracking-wider text-white/90">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span> Oficial Perú
+          </span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold tracking-tight text-white leading-tight mt-1">
+          Catálogo JBL | Serie Premium
+        </h2>
+<p class="font-body-sm text-body-sm text-white/90 max-w-[280px]">
+          Potencia acústica imparable, bajos masivos y resistencia extrema donde vayas.
+        </p>
+</div>
+<!-- Background Ambient Graphic -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="absolute right-3 top-3 opacity-15 pointer-events-none">
+<span class="material-symbols-outlined text-[88px] leading-none">graphic_eq</span>
+</div>
+</div>
+</section>
+<!-- Interactive Category Filter Chips -->
+<section class="w-full pb-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto px-margin no-scrollbar py-1" id="categoryChips">
+<button class="cat-pill active-pill whitespace-nowrap px-4 py-2 rounded-full font-headline-sm text-body-sm font-semibold transition-all shadow-sm bg-primary-container text-white" data-cat="all">
+        Todos
+      </button>
+<button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full font-headline-sm text-body-sm font-medium transition-all bg-surface-container-high text-on-surface hover:text-white" data-cat="portatiles">
+        Portátiles
+      </button>
+<button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full font-headline-sm text-body-sm font-medium transition-all bg-surface-container-high text-on-surface hover:text-white" data-cat="party">
+        Party &amp; Luces
+      </button>
+<button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full font-headline-sm text-body-sm font-medium transition-all bg-surface-container-high text-on-surface hover:text-white" data-cat="potencia">
+        Alta Potencia
+      </button>
+<button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full font-headline-sm text-body-sm font-medium transition-all bg-surface-container-high text-on-surface hover:text-white" data-cat="acuaticos">
+        Acuáticos
+      </button>
+</div>
+</section>
+<!-- Product Count & Quick Search Banner -->
+<div class="px-margin flex items-center justify-between pb-space-sm text-on-surface-variant font-label-tech text-label-tech uppercase">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+      5 Modelos Disponibles
+    </span>
+<span class="text-primary-container font-semibold tracking-wide">Envío Express Lima</span>
+</div>
+<!-- Product Listing -->
+<div class="px-margin flex flex-col gap-space-md pb-space-xl" id="productGrid">
+<!-- Card 1: JBL Charge 5 -->
+<article class="group relative rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex flex-col transition-all duration-300" data-category="portatiles acuaticos">
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-space-md overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 z-10"></div>
+<img class="w-full h-full object-contain relative z-0 transition-transform duration-500 group-hover:scale-105" data-alt="Rugged JBL Charge 5 portable Bluetooth speaker in deep charcoal black resting on dark wet volcanic rock with dynamic fine water droplets exploding off passive radiators, high-end studio contrast lighting, warm orange edge glow accents, cinematic product render 8k" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNtijpoSMDJGAzKj_RjybpOljOnMoPFkSLs05V_zOPiYEbAkXgeYUAmUGHWzFllOjElmWWL4SSPWOP6hZz6cBOaybqgyaqsN70lXtzAJBgJvHLliG5nkXhR80l1SXA4mNvf_luqNu4sQJdwIS5EDuaaw9wmPK27r67pgiVkceG3aUEHOIPJA7Oa8Mi4lxq02_sip2cEz8Y1WdNGrgoAoZlanhrHXqIuexxaZJM1E"/>
+<!-- Feature Badge -->
+<div class="absolute top-3 left-3 z-20">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-white font-label-badge text-label-badge uppercase shadow-sm">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+            Batería 20h • Powerbank
+          </span>
+</div>
+<!-- Quick Acoustic Indicator -->
+<div class="absolute top-3 right-3 z-20">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs relative z-20">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-tech text-label-tech text-primary font-bold uppercase tracking-wider">JBL PRO SOUND</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">JBL Charge 5</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-tech text-label-tech uppercase self-start">
+            IP67
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Sonido JBL Original Pro de graves profundos, certificación IP67 impermeable contra agua y polvo total.
+        </p>
+<!-- Technical Specs Strip -->
+<div class="flex items-center gap-2 py-1 overflow-x-auto no-scrollbar font-label-tech text-[10px] text-on-surface">
+<span class="bg-surface-container px-2 py-1 rounded">30W RMS</span>
+<span class="bg-surface-container px-2 py-1 rounded">BT 5.1</span>
+<span class="bg-surface-container px-2 py-1 rounded">PartyBoost</span>
+<span class="bg-surface-container px-2 py-1 rounded text-primary">Powerbank USB</span>
+</div>
+<!-- Pricing Row -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">S/ 649</span>
+<span class="font-label-tech text-label-tech text-on-surface-variant font-medium">$179 USD</span>
+</div>
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold tracking-wider">Stock Inmediato</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-2xs pt-1">
+<a class="w-full min-h-[46px] rounded-xl bg-primary-container text-white font-cta-button text-cta-button uppercase flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/51999999999?text=Hola%20JBL%20Store%2C%20deseo%20pedir%20el%20JBL%20Charge%205%20(S%2F%20649)" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.223-.554-1.951-.808-3.197-2.79-3.296-2.921-.099-.133-.789-1.052-.789-2.006 0-.954.5-1.424.678-1.618.178-.194.389-.243.518-.243.13 0 .26 0 .373.007.123.008.288-.047.45.342.167.399.569 1.387.618 1.488.05.101.083.218.016.351-.067.133-.1.217-.199.333-.1.116-.21.259-.3.348-.1.099-.204.208-.088.408.116.2.518.855 1.112 1.384.767.683 1.413.895 1.613.994.2.1.316.084.433-.05.117-.133.5-.583.633-.783.133-.2.267-.166.45-.1.183.067 1.164.55 1.365.65.2.1.333.15.383.233.05.083.05.483-.094.888zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.982-1.393A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"></path>
+</svg>
+            Pedir por WhatsApp
+          </a>
+<button class="w-full py-2 flex items-center justify-center gap-1 text-on-surface-variant font-label-badge text-label-badge uppercase hover:text-white transition-colors">
+<span>Ver especificaciones completas</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: JBL Xtreme 3 -->
+<article class="group relative rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex flex-col transition-all duration-300" data-category="portatiles potencia acuaticos">
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-space-md overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 z-10"></div>
+<img class="w-full h-full object-contain relative z-0 transition-transform duration-500 group-hover:scale-105" data-alt="Massive JBL Xtreme 3 boombox speaker with integrated carry strap showing built-in bottle opener, rugged metallic logo detailing, deep acoustic woven mesh texture, vibrant stadium lighting on matte black surface, hyper-realistic audio gear showcase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBRtAOLox_iI0NZbysYI88BNrS69WKKGtzO7bJgMIWnGsWjk4o1txfZpjWpxAWFpyZTY9bihPItL7d3mI3TBTF8GjYtal2YWmuZ0K-yuqLtbOF70K4F-p603F8vUY5na21kP1TFjve43iV00mp6j1-C4UZ5k7CdvgcGkEnWSTgxiwIDLevoeN96urIkGMK44YO3w1pPw0uWgTdWPjAvx-E6eccTZ17PHN6cKvSKrs"/>
+<div class="absolute top-3 left-3 z-20">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-white font-label-badge text-label-badge uppercase shadow-sm">
+<span class="material-symbols-outlined text-[13px]">equalizer</span>
+            Graves Masivos • IP67
+          </span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span>
+</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs relative z-20">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-tech text-label-tech text-primary font-bold uppercase tracking-wider">POTENCIA BRUTA</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">JBL Xtreme 3</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-tech text-label-tech uppercase self-start">
+            100W RMS
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          4 drivers de alta fidelidad + 2 radiadores pasivos. Incluye correa táctica de transporte con destapador de botellas integrado.
+        </p>
+<!-- Technical Specs Strip -->
+<div class="flex items-center gap-2 py-1 overflow-x-auto no-scrollbar font-label-tech text-[10px] text-on-surface">
+<span class="bg-surface-container px-2 py-1 rounded">15 Horas Batería</span>
+<span class="bg-surface-container px-2 py-1 rounded">Carga Rápida USB-C</span>
+<span class="bg-surface-container px-2 py-1 rounded text-secondary">A prueba de agua</span>
+</div>
+<!-- Pricing Row -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">S/ 1,199</span>
+<span class="font-label-tech text-label-tech text-on-surface-variant font-medium">$320 USD</span>
+</div>
+<span class="font-label-badge text-label-badge text-primary uppercase font-bold tracking-wider">Top Ventas</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-2xs pt-1">
+<a class="w-full min-h-[46px] rounded-xl bg-primary-container text-white font-cta-button text-cta-button uppercase flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/51999999999?text=Hola%20JBL%20Store%2C%20deseo%20pedir%20el%20JBL%20Xtreme%203%20(S%2F%201199)" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.223-.554-1.951-.808-3.197-2.79-3.296-2.921-.099-.133-.789-1.052-.789-2.006 0-.954.5-1.424.678-1.618.178-.194.389-.243.518-.243.13 0 .26 0 .373.007.123.008.288-.047.45.342.167.399.569 1.387.618 1.488.05.101.083.218.016.351-.067.133-.1.217-.199.333-.1.116-.21.259-.3.348-.1.099-.204.208-.088.408.116.2.518.855 1.112 1.384.767.683 1.413.895 1.613.994.2.1.316.084.433-.05.117-.133.5-.583.633-.783.133-.2.267-.166.45-.1.183.067 1.164.55 1.365.65.2.1.333.15.383.233.05.083.05.483-.094.888zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.982-1.393A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"></path>
+</svg>
+            Pedir por WhatsApp
+          </a>
+<button class="w-full py-2 flex items-center justify-center gap-1 text-on-surface-variant font-label-badge text-label-badge uppercase hover:text-white transition-colors">
+<span>Ver especificaciones completas</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: JBL Pulse 5 -->
+<article class="group relative rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex flex-col transition-all duration-300" data-category="portatiles party acuaticos">
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-space-md overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 z-10"></div>
+<img class="w-full h-full object-contain relative z-0 transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic JBL Pulse 5 speaker glowing vividly in deep dark studio with ambient neon LED acrylic body casting fluid organic color waves of cyan, electric amber, and magenta, illuminated sound visualizer reflections on polished obsidian pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWqJAra4U1awKyQzqo7X7apKrp8ibL5B6GK9EzRRqLbmslJ9V4xrb4rqZ_i_T4ubqfJ2xHKjETXKyzM7KhVQF4JPgbptlcdLOpf7F4L4ERFCYG9xJ6ctX4RtotyEWdvzF85zN0lPXLTleaWNQQFFmUaiOTuR7kH3Dkjx55nLI82E8LbESvx2v36fAjFvwFMlhbK34AaMdPGpo2F4NTUssIUspnyJTRyeAb0EuO9Rc"/>
+<div class="absolute top-3 left-3 z-20">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-white font-label-badge text-label-badge uppercase shadow-sm">
+<span class="material-symbols-outlined text-[13px]">flare</span>
+            Show de Luces 360°
+          </span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">palette</span>
+</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs relative z-20">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-tech text-label-tech text-secondary font-bold uppercase tracking-wider">AMBIENT ILLUMINATION</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">JBL Pulse 5</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-tech text-label-tech uppercase self-start">
+            RGB LED
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Espectáculo de luces ambiental envolvente al compás de cada beat. Protección IP67 y sonido omnidireccional nítido.
+        </p>
+<!-- Technical Specs Strip -->
+<div class="flex items-center gap-2 py-1 overflow-x-auto no-scrollbar font-label-tech text-[10px] text-on-surface">
+<span class="bg-surface-container px-2 py-1 rounded">12h Música + Luz</span>
+<span class="bg-surface-container px-2 py-1 rounded">JBL Portable App</span>
+<span class="bg-surface-container px-2 py-1 rounded">Correa Reforzada</span>
+</div>
+<!-- Pricing Row -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">S/ 999</span>
+<span class="font-label-tech text-label-tech text-on-surface-variant font-medium">$270 USD</span>
+</div>
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold tracking-wider">Edición Luces</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-2xs pt-1">
+<a class="w-full min-h-[46px] rounded-xl bg-primary-container text-white font-cta-button text-cta-button uppercase flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/51999999999?text=Hola%20JBL%20Store%2C%20deseo%20pedir%20el%20JBL%20Pulse%205%20(S%2F%20999)" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.223-.554-1.951-.808-3.197-2.79-3.296-2.921-.099-.133-.789-1.052-.789-2.006 0-.954.5-1.424.678-1.618.178-.194.389-.243.518-.243.13 0 .26 0 .373.007.123.008.288-.047.45.342.167.399.569 1.387.618 1.488.05.101.083.218.016.351-.067.133-.1.217-.199.333-.1.116-.21.259-.3.348-.1.099-.204.208-.088.408.116.2.518.855 1.112 1.384.767.683 1.413.895 1.613.994.2.1.316.084.433-.05.117-.133.5-.583.633-.783.133-.2.267-.166.45-.1.183.067 1.164.55 1.365.65.2.1.333.15.383.233.05.083.05.483-.094.888zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.982-1.393A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"></path>
+</svg>
+            Pedir por WhatsApp
+          </a>
+<button class="w-full py-2 flex items-center justify-center gap-1 text-on-surface-variant font-label-badge text-label-badge uppercase hover:text-white transition-colors">
+<span>Ver especificaciones completas</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: JBL PartyBox Encore Essential -->
+<article class="group relative rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex flex-col transition-all duration-300" data-category="party potencia">
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-space-md overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 z-10"></div>
+<img class="w-full h-full object-contain relative z-0 transition-transform duration-500 group-hover:scale-105" data-alt="JBL PartyBox Encore Essential cube speaker in dynamic party setting with dynamic built-in ring strobe light pulsing, wired microphone plugged into top console, heavy industrial metal speaker mesh, vibrant orange JBL insignia in center, concert atmosphere dark styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADc8tHBOVwV4cn_q6Q5ZJ77OxNtHL2H2uJZ9gR7GS-HHYxYZ1a2Zv6dYPzj-uWtGyFtxx84dT0kgggwntT3hgJIVe6cbj32_5rTk0xhOTGNg-kIK16qP4spgk79JcdSI-SWAKIdpR16_5wxW-kLylj1rh_YA9E-65O4M8HyRjP8dZONVmlklj12xXFdmofTE4nhOz-yGxmbcyg8Kz_K3jBpw8yeGbg3M2kVbKctQ0"/>
+<div class="absolute top-3 left-3 z-20">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-white font-label-badge text-label-badge uppercase shadow-sm">
+<span class="material-symbols-outlined text-[13px]">mic</span>
+            Potencia 100W • Entrada Mic
+          </span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">nightlife</span>
+</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs relative z-20">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-tech text-label-tech text-primary font-bold uppercase tracking-wider">PARTY MACHINE</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">PartyBox Encore Essential</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-tech text-label-tech uppercase self-start">
+            IPX4
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Graves profundos JBL Original Pro Sound, luces dinámicas estroboscópicas y entrada para micrófono de karaoke.
+        </p>
+<!-- Technical Specs Strip -->
+<div class="flex items-center gap-2 py-1 overflow-x-auto no-scrollbar font-label-tech text-[10px] text-on-surface">
+<span class="bg-surface-container px-2 py-1 rounded">100W RMS</span>
+<span class="bg-surface-container px-2 py-1 rounded">6h Batería</span>
+<span class="bg-surface-container px-2 py-1 rounded text-tertiary">Entrada Karaoke</span>
+</div>
+<!-- Pricing Row -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">S/ 1,299</span>
+<span class="font-label-tech text-label-tech text-on-surface-variant font-medium">$350 USD</span>
+</div>
+<span class="font-label-badge text-label-badge text-secondary font-bold uppercase tracking-wider">Party Ready</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-2xs pt-1">
+<a class="w-full min-h-[46px] rounded-xl bg-primary-container text-white font-cta-button text-cta-button uppercase flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/51999999999?text=Hola%20JBL%20Store%2C%20deseo%20pedir%20el%20JBL%20PartyBox%20Encore%20Essential%20(S%2F%201299)" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.223-.554-1.951-.808-3.197-2.79-3.296-2.921-.099-.133-.789-1.052-.789-2.006 0-.954.5-1.424.678-1.618.178-.194.389-.243.518-.243.13 0 .26 0 .373.007.123.008.288-.047.45.342.167.399.569 1.387.618 1.488.05.101.083.218.016.351-.067.133-.1.217-.199.333-.1.116-.21.259-.3.348-.1.099-.204.208-.088.408.116.2.518.855 1.112 1.384.767.683 1.413.895 1.613.994.2.1.316.084.433-.05.117-.133.5-.583.633-.783.133-.2.267-.166.45-.1.183.067 1.164.55 1.365.65.2.1.333.15.383.233.05.083.05.483-.094.888zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.982-1.393A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"></path>
+</svg>
+            Pedir por WhatsApp
+          </a>
+<button class="w-full py-2 flex items-center justify-center gap-1 text-on-surface-variant font-label-badge text-label-badge uppercase hover:text-white transition-colors">
+<span>Ver especificaciones completas</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5: JBL Flip 6 Squad Edition -->
+<article class="group relative rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex flex-col transition-all duration-300" data-category="portatiles acuaticos">
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-space-md overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 z-10"></div>
+<img class="w-full h-full object-contain relative z-0 transition-transform duration-500 group-hover:scale-105" data-alt="JBL Flip 6 special Squad Edition camouflage military pattern portable speaker suspended diagonally against dark charcoal textured metal background with orange acoustic vibration waves around passive bass radiator, high contrast studio gear photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYGdGL_GNbWtZRD4uzJxRv3-qR3AIZ5Q8IaqAk3_JkZlZDTdp0TNsH0jAd6ymidaF6YdawH9uzMFhBW5OSNsEKcU7ACmGP8syAQjVo8JuzMG43rqgcV13E2CYelWsKPi-xxN8zWNmayMDs9QttzbNYXB8EB-Zjrqy17mncqiAtNUaCseZLIYLLSQN1vEHvXRkLpfy4xCLLd-ftRfQylne3Yi4w4o4dbVFdoJC678"/>
+<div class="absolute top-3 left-3 z-20">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-white font-label-badge text-label-badge uppercase shadow-sm">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+            IP67 • Sistema 2 Vías
+          </span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-label-tech text-[10px] font-bold">
+            SQUAD ED.
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs relative z-20">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-tech text-label-tech text-primary font-bold uppercase tracking-wider">ULTRA PORTÁTIL</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">JBL Flip 6</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-tech text-label-tech uppercase self-start">
+            12 Horas
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Altavoz de graves tipo circuito y tweeter independiente. Claridad absoluta en agudos y potencia en bajas frecuencias.
+        </p>
+<!-- Technical Specs Strip -->
+<div class="flex items-center gap-2 py-1 overflow-x-auto no-scrollbar font-label-tech text-[10px] text-on-surface">
+<span class="bg-surface-container px-2 py-1 rounded">20W RMS + 10W</span>
+<span class="bg-surface-container px-2 py-1 rounded">PartyBoost</span>
+<span class="bg-surface-container px-2 py-1 rounded text-primary">Ultra Compacto</span>
+</div>
+<!-- Pricing Row -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">S/ 549</span>
+<span class="font-label-tech text-label-tech text-on-surface-variant font-medium">$149 USD</span>
+</div>
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold tracking-wider">En Descuento</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-2xs pt-1">
+<a class="w-full min-h-[46px] rounded-xl bg-primary-container text-white font-cta-button text-cta-button uppercase flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/51999999999?text=Hola%20JBL%20Store%2C%20deseo%20pedir%20el%20JBL%20Flip%206%20(S%2F%20549)" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.223-.554-1.951-.808-3.197-2.79-3.296-2.921-.099-.133-.789-1.052-.789-2.006 0-.954.5-1.424.678-1.618.178-.194.389-.243.518-.243.13 0 .26 0 .373.007.123.008.288-.047.45.342.167.399.569 1.387.618 1.488.05.101.083.218.016.351-.067.133-.1.217-.199.333-.1.116-.21.259-.3.348-.1.099-.204.208-.088.408.116.2.518.855 1.112 1.384.767.683 1.413.895 1.613.994.2.1.316.084.433-.05.117-.133.5-.583.633-.783.133-.2.267-.166.45-.1.183.067 1.164.55 1.365.65.2.1.333.15.383.233.05.083.05.483-.094.888zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.982-1.393A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"></path>
+</svg>
+            Pedir por WhatsApp
+          </a>
+<button class="w-full py-2 flex items-center justify-center gap-1 text-on-surface-variant font-label-badge text-label-badge uppercase hover:text-white transition-colors">
+<span>Ver especificaciones completas</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Trust & Service Badges Section -->
+<section class="px-margin pb-space-lg">
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 items-start">
+<span class="material-symbols-outlined text-primary-container text-[24px]">verified_user</span>
+<span class="font-headline-sm text-[13px] font-bold text-white">Garantía 1 Año</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Soporte técnico directo JBL Harman</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 items-start">
+<span class="material-symbols-outlined text-primary-container text-[24px]">local_shipping</span>
+<span class="font-headline-sm text-[13px] font-bold text-white">Despacho Mismo Día</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Envíos seguros a todo el Perú</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 items-start">
+<span class="material-symbols-outlined text-primary-container text-[24px]">payments</span>
+<span class="font-headline-sm text-[13px] font-bold text-white">Pago Contra Entrega</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Válido en Lima Metropolitana</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 items-start">
+<span class="material-symbols-outlined text-primary-container text-[24px]">support_agent</span>
+<span class="font-headline-sm text-[13px] font-bold text-white">Asesoría Acústica</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Atención 24/7 vía WhatsApp</span>
+</div>
+</div>
+</section>
+<!-- Interactive Sound EQ Selector Mini-Module -->
+<section class="px-margin pb-space-xl">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">graphic_eq</span>
+<span class="font-headline-sm text-headline-sm text-white font-bold">Simulador Sound Signature</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary-fixed font-label-tech text-label-tech">JBL EQ</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Experimenta el perfil sonoro JBL Bass Boost y la curva de respuesta acústica.
+      </p>
+<div class="flex gap-2 pt-2" id="eqButtons">
+<button class="eq-btn flex-1 py-2 px-1 rounded-lg bg-primary-container text-white font-headline-sm text-[12px] font-bold uppercase transition-all shadow-sm" data-eq="bass">
+          Pure Bass
+        </button>
+<button class="eq-btn flex-1 py-2 px-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-headline-sm text-[12px] font-bold uppercase transition-all" data-eq="vocal">
+          Vocal Pro
+        </button>
+<button class="eq-btn flex-1 py-2 px-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-headline-sm text-[12px] font-bold uppercase transition-all" data-eq="club">
+          Club 360
+        </button>
+</div>
+<!-- Animated Graphic Bars -->
+<div class="h-12 bg-surface-container-lowest rounded-lg p-2 flex items-end justify-between gap-1 mt-2">
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 85%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 95%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 60%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 45%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 70%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 80%;"></div>
+<div class="eq-bar w-full bg-primary-container rounded-t transition-all duration-300" style="height: 90%;"></div>
+</div>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="w-full bg-surface-container-lowest px-margin pt-space-xl pb-space-lg flex flex-col gap-space-lg">
+<!-- Payment Badges Strip -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase tracking-wider text-center">
+        Métodos de Pago Seguros
+      </span>
+<div class="flex items-center justify-center gap-2 flex-wrap pt-1">
+<span class="px-3 py-1 rounded bg-surface-container-high text-white font-headline-sm text-[11px] font-bold tracking-wider">
+          VISA
+        </span>
+<span class="px-3 py-1 rounded bg-surface-container-high text-white font-headline-sm text-[11px] font-bold tracking-wider">
+          MASTERCARD
+        </span>
+<span class="px-3 py-1 rounded bg-surface-container-high text-secondary font-headline-sm text-[11px] font-bold tracking-wider">
+          YAPE
+        </span>
+<span class="px-3 py-1 rounded bg-surface-container-high text-secondary-fixed font-headline-sm text-[11px] font-bold tracking-wider">
+          PLIN
+        </span>
+<span class="px-3 py-1 rounded bg-surface-container-high text-tertiary font-headline-sm text-[11px] font-bold tracking-wider">
+          EFECTIVO
+        </span>
+</div>
+</div>
+<!-- Official Guarantee & Support -->
+<div class="flex flex-col gap-1 text-center">
+<h4 class="font-headline-sm text-headline-sm text-white font-bold tracking-tight">Atención y Soporte JBL Perú</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Lunes a Sábado: 9:00 AM – 8:00 PM<br/>
+        Garantía oficial JBL Harman de 1 año con factura o boleta electrónica.
+      </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-high text-white font-label-tech text-label-tech font-semibold" href="tel:+51999999999">
+<span class="material-symbols-outlined text-[16px] text-primary-container">call</span>
+          +51 999 999 999
+        </a>
+</div>
+</div>
+<!-- Social Media Links -->
+<div class="flex items-center justify-center gap-4 text-on-surface-variant">
+<a aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-primary-container transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a aria-label="Facebook" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-primary-container transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+</a>
+<a aria-label="TikTok" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-primary-container transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+<a aria-label="YouTube" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-primary-container transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+</div>
+<!-- Legal Copyright Notice -->
+<div class="text-center pt-space-xs pb-space-sm border-t border-surface-container-high/40">
+<p class="font-body-sm text-[11px] text-on-surface-variant/80">
+        © 2025 JBL Audio Store Perú. Todos los derechos reservados.
+      </p>
+<p class="font-label-tech text-[10px] text-outline-variant mt-1">
+        Distribuidores autorizados de audio profesional y consumo portátil.
+      </p>
+</div>
+</footer>
+</div>
+<script>
+  // Category Pill Filter Interactions
+  const pills = document.querySelectorAll('.cat-pill');
+  const cards = document.querySelectorAll('#productGrid > article');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => {
+        p.classList.remove('bg-primary-container', 'text-white');
+        p.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+      pill.classList.remove('bg-surface-container-high', 'text-on-surface');
+      pill.classList.add('bg-primary-container', 'text-white');
+
+      const filter = pill.getAttribute('data-cat');
+      cards.forEach(card => {
+        const categories = card.getAttribute('data-category') || '';
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // EQ Simulator Interactive Toggle
+  const eqBtns = document.querySelectorAll('.eq-btn');
+  const eqBars = document.querySelectorAll('.eq-bar');
+
+  const eqPresets = {
+    bass: ['85%', '95%', '60%', '45%', '70%', '80%', '90%'],
+    vocal: ['40%', '55%', '90%', '98%', '85%', '65%', '50%'],
+    club: ['95%', '85%', '50%', '70%', '85%', '95%', '100%']
+  };
+
+  eqBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      eqBtns.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-white');
+        b.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+      });
+      btn.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+      btn.classList.add('bg-primary-container', 'text-white');
+
+      const preset = eqPresets[btn.getAttribute('data-eq')];
+      if (preset) {
+        eqBars.forEach((bar, idx) => {
+          bar.style.height = preset[idx] || '50%';
+        });
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.6)]" data-active-classes="text-primary-container"><div class="h-16 px-space-md flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-outline hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-badge text-label-badge mt-1 uppercase tracking-wider">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-outline hover:text-on-surface transition-colors" data-path="catalogo" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-badge text-label-badge mt-1 uppercase tracking-wider">Catálogo</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-outline hover:text-on-surface transition-colors" data-path="favoritos" href="#"><span class="material-symbols-outlined text-[22px]">favorite</span><span class="font-label-badge text-label-badge mt-1 uppercase tracking-wider">Favoritos</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-outline hover:text-on-surface transition-colors relative" data-path="carrito" href="#"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="font-label-badge text-label-badge mt-1 uppercase tracking-wider">Carrito</span></a></div></nav></body></html>
